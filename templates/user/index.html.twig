@@ -1,0 +1,92 @@
+{% extends 'accueil/index.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+ <div class="container mt-5">
+        <div class="row tm-content-row">
+          <div class="col-12 tm-block-col">
+            <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
+              <h2 class="tm-block-title">Liste des roles</h2>
+              <p class="text-white">Roles</p>
+              <select class="custom-select">
+                <option selected value="0">Selectionner un role</option>
+                {% for role in roles %}
+                    <option>{{ role.nomRole }}</option>
+                {% else %}
+                    <option>Aucun role trouvee</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row tm-content-row">
+          <div class="tm-block-col tm-col-avatar">
+            <div class="tm-bg-primary-dark tm-block tm-block-avatar">
+              <h2 class="tm-block-title">Ajouter des roles</h2>
+              <form action="" class="tm-signup-form row">
+                <div class="form-group col-lg-12">
+                  <label for="name">Nom</label>
+                  <input id="name" name="nomRole" type="text" class="form-control validate" />
+                </div>
+                <button class="btn btn-primary btn-block text-uppercase col-12">
+                    Ajouter
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="tm-block-col tm-col-account-settings">
+            <div class="tm-bg-primary-dark tm-block tm-block-settings">
+              <h2 class="tm-block-title">Ajouter des utilisateurs</h2>
+              <form action="" class="tm-signup-form row">
+                <div class="form-group col-lg-6">
+                  <label for="name">Nom</label>
+                  <input
+                    id="name"
+                    name="nomUser"
+                    type="text"
+                    class="form-control validate"
+                  />
+                </div>
+                <div class="form-group col-lg-6">
+                  <label for="email">Email</label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    class="form-control validate"
+                  />
+                </div>
+                <div class="form-group col-lg-6">
+                  <label for="phone">Prenom</label>
+                  <input
+                    id="phone"
+                    name="prenomUser"
+                    type="tel"
+                    class="form-control validate"
+                  />
+                </div>
+                <div class="form-group col-lg-6">
+                  <label for="password">Mot de passe</label>
+                  <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    class="form-control validate"
+                  />
+                </div>
+                <div class="form-group col-lg-12">
+                  <label class="tm-hide-sm">&nbsp;</label>
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-block text-uppercase"
+                  >
+                    Ajouter
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}
